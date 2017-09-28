@@ -1,3 +1,9 @@
+/*
+ * Copyright 2017 villanue, CMPUT 301, University of Alberta - All Rights Reserved
+ * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
+ * You can find a copy of the license in this project. Otherwise please contact contact@abc.ca
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -24,6 +30,9 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * Main Activity of the Lonely Twitter Program
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -107,6 +116,9 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * Loads old Tweets from a file
+	 */
 	private void loadFromFile() {
 		//ArrayList<String> tweets = new ArrayList<String>();
 		try {
@@ -135,7 +147,10 @@ public class LonelyTwitterActivity extends Activity {
 		}
 		//return tweets.toArray(new String[tweets.size()]);
 	}
-	
+
+	/**
+	 * Saves a Tweet in a file then updates the activity
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
